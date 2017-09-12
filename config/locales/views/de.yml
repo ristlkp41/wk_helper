@@ -1,0 +1,23 @@
+de:
+  helpers:
+    titles:
+      new: "%{model} erfassen"
+      update: "%{model} editieren"
+    flashes:
+      create:
+        notice: "%{model} wurde erfolgreich gespeichert."
+        alert: "%{model} konnte nicht gespeichert werden."
+      update:
+        notice: "%{model} wurde erfolgreich aktualisiert."
+        alert: "%{model} konnte nicht aktualisiert werden."
+      destroy:
+        notice: "%{model} wurde erfolgreich gelöscht."
+    links:
+      back: Zurück
+      new: Neu erfassen
+      edit: Editieren
+      create: Erfassen
+      update: Aktualisieren
+      show: Anzeigen
+      destroy: Löschen
+      confirm: Diese Aktion kann nicht rückgängig gemacht werden. Sind Sie sicher?

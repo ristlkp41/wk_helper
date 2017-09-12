@@ -32,6 +32,8 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'slim-rails'
 gem 'twitter-bootstrap-rails'
+gem 'rails-i18n'
+gem 'simple_form'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

@@ -1,0 +1,19 @@
+de:
+  activerecord:
+    models:
+      service_member:
+        one: Dienstleistender
+        other: Dienstleistende
+    attributes:
+      service_member:
+        rank: Grad
+        lastname: Nachname
+        firstname: Vorname
+        ahv_number: AHV-Nummer
+    errors:
+      messages:
+        record_invalid: 'Gültigkeitsprüfung ist fehlgeschlagen: %{errors}'
+        restrict_dependent_destroy:
+          has_one: Datensatz kann nicht gelöscht werden, da ein abhängiger %{record}-Datensatz
+            existiert.
+          has_many: Datensatz kann nicht gelöscht werden, da abhängige %{record} existieren.

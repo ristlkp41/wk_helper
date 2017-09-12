@@ -1,0 +1,31 @@
+.row
+  .col-lg-3
+    .well.sidebar
+      ul.nav.nav-list
+        li= link_to t('.new', default: t('helpers.links.new')), new_admin_service_member_path
+
+  .col-lg-9
+    h1= t '.title', default: ServiceMember.model_name.human(count: 2)
+
+    table.table.table-striped
+      thead
+        tr
+          th= ServiceMember.human_attribute_name(:id)
+          th= ServiceMember.human_attribute_name(:rank)
+          th= ServiceMember.human_attribute_name(:lastname)
+          th= ServiceMember.human_attribute_name(:firstname)
+          th= ServiceMember.human_attribute_name(:ahv_number)
+          th
+      tbody
+        - @service_members.each do |service_member|
+          tr
+            td= link_to service_member.id, admin_service_member_path(service_member)
+            td= service_member.rank
+            td= service_member.lastname
+            td= service_member.firstname
+            td= service_member.ahv_number
+            td
+              = link_to t('.show', default: t("helpers.links.show")), admin_service_member_path(service_member), class: 'btn btn-default btn-xs'
+              = link_to t('.edit', default: t("helpers.links.edit")), edit_admin_service_member_path(service_member), class: 'btn btn-default btn-xs'
+              = link_to t('.destroy', default: t("helpers.links.destroy")), admin_service_member_path(service_member), method: :delete, data: { confirm: t('.confirm', default: t("helpers.links.confirm")) }, class: 'btn btn-xs btn-danger'
+

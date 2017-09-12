@@ -1,0 +1,14 @@
+.row
+  .col-lg-3
+    .well.sidebar-nav
+      ul.nav.nav-list
+        li= link_to t('.back', default: t('helpers.links.back')), admin_service_members_path
+
+  .col-lg-9
+    h1= t '.title', default: [:'helpers.titles.new', 'New %{model}'], model: ServiceMember.model_name.human
+
+    = simple_form_for @service_member, url: admin_service_members_path do |form|
+      = render partial: "form", locals: { form: form }
+
+      .form-actions
+        = form.submit t('.create', default: t('helpers.links.create'))
