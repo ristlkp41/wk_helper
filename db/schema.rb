@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170911151606) do
+ActiveRecord::Schema.define(version: 20170912132341) do
+
+  create_table "passages", force: :cascade do |t|
+    t.integer "service_member_id"
+    t.datetime "passed_at", null: false
+    t.string "way", null: false
+    t.index ["service_member_id"], name: "index_passages_on_service_member_id"
+  end
 
   create_table "service_members", force: :cascade do |t|
     t.string "rank"
