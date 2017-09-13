@@ -30,4 +30,21 @@ RSpec.describe ServiceMember, type: :model do
     end
   end
 
+  describe '#last_passage' do
+    before(:each) do
+      @service_member = Fabricate(:service_member)
+    end
+
+    it 'returns nil if no passage found' do
+      expect(@service_member.last_passage).to eql(nil)
+    end
+
+    it 'returns the most current passage otherwise' do
+      first = Fabricate(:passage, service_member: @service_member, passed_at: 2.days.ago)
+      second = Fabricate(:passage, service_member: @service_member, passed_at: 1.days.ago)
+
+      expect(@service_member.last_passage).to eql(second)
+    end
+  end
+
 end

@@ -21,3 +21,14 @@ de:
       show: Anzeigen
       destroy: Löschen
       confirm: Diese Aktion kann nicht rückgängig gemacht werden. Sind Sie sicher?
+
+  zuko:
+    passages:
+      new:
+        last_passage:
+          in: Letzter Eingang
+          out: Letzter Ausgang
+        new_passage: Neuer Ein-/Ausgang
+      create:
+        notice: Ein-/Austritt erfolgreich registriert
+        alert: Unbekannte/Ungültige AHV-Nummer

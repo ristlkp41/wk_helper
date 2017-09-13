@@ -1,0 +1,29 @@
+
+- if @service_member.present?
+  .row
+    .col-md-12
+      h1= t(".last_passage.#{@passage.way}")
+
+      p
+        strong= ServiceMember.human_attribute_name(:rank)
+        br
+        = @service_member.rank
+      p
+        strong= ServiceMember.human_attribute_name(:lastname)
+        br
+        = @service_member.lastname
+      p
+        strong= ServiceMember.human_attribute_name(:firstname)
+        br
+        = @service_member.firstname
+
+
+.row
+  .col-md-12
+    h1= t('.new_passage')
+
+    = form_tag zuko_passages_path, method: 'post' do
+      .form-group.string.passage_ahv_number
+        = label_tag :passage_ahv_number, 'AHV-Number', class: 'control-label string'
+        = text_field_tag :passage_ahv_number, nil, class: 'form-control string', name: 'passage[ahv_number]', type: 'text', autofocus: true
+
