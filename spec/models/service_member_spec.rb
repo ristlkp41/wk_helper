@@ -47,4 +47,30 @@ RSpec.describe ServiceMember, type: :model do
     end
   end
 
+  describe '#editable?' do
+    it 'returns false if service member has been imported' do
+      service_member = Fabricate.build(:service_member, imported_at: Time.now)
+      expect(service_member).to_not be_editable
+    end
+
+    it 'returns true if service member has been created manually' do
+      service_member = Fabricate.build(:service_member, imported_at: nil)
+      expect(service_member).to be_editable
+    end
+  end
+
+  describe '#deletable?' do
+    it 'returns false if passages have been recorded for this service member' do
+      service_member = Fabricate(:service_member)
+      Fabricate(:passage, service_member: service_member)
+
+      expect(service_member).to_not be_deletable
+    end
+
+    it 'returns true otherwise' do
+      service_member = Fabricate(:service_member)
+      expect(service_member).to be_deletable
+    end
+  end
+
 end

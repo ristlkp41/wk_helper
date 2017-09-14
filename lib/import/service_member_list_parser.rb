@@ -34,7 +34,8 @@ module Import
         rank: row[0],
         lastname: row[1]&.split(',', 2)&.first,
         firstname: row[1]&.split(',', 2)&.last,
-        ahv_number: row[80]
+        ahv_number: row[80],
+        imported_at: Time.now
       }
     end
 

@@ -11,4 +11,12 @@ class ServiceMember < ApplicationRecord
     passages.order(passed_at: :desc).limit(1).first
   end
 
+  def editable?
+    imported_at.nil?
+  end
+
+  def deletable?
+    passages.empty?
+  end
+
 end

@@ -12,6 +12,7 @@ de:
         alert: "%{model} konnte nicht aktualisiert werden."
       destroy:
         notice: "%{model} wurde erfolgreich gelöscht."
+        alert: "%{model} konnte nicht gelöscht werden."
     links:
       back: Zurück
       new: Neu erfassen
