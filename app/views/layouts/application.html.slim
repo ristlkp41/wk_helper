@@ -28,7 +28,8 @@ html lang="en"
           a.navbar-brand href="#"WkHelper
           .navbar-collapse.collapse.navbar-responsive-collapse
             ul.nav.navbar-nav
-              li= link_to ServiceMember.model_name.human(count: 2), admin_service_members_path
+              - if controller_path.start_with?('admin/')
+                li= link_to ServiceMember.model_name.human(count: 2), admin_service_members_path
 
     .container
       = bootstrap_flash

@@ -38,8 +38,9 @@ de:
 
   zuko:
     attendees:
-      index:
-        title: Zurzeit %{count} Dienstleistende anwesend
+      service_members:
+        title: "%{count} Dienstleistende anwesend"
+        refresh: Aktualisieren
     passages:
       new:
         last_passage:

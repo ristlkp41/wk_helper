@@ -1,0 +1,22 @@
+#service-members
+  .row
+    .col-md-12
+      h1
+        = l(Time.now, format: "%d.%m. %H:%M:%S")
+        span.pull-right= t('.title', count: service_members.count)
+      = link_to t('.refresh'), zuko_attendees_path, remote: true, class: 'refresh'
+
+      table.table.table-striped
+        thead
+          tr
+            th= ServiceMember.human_attribute_name(:rank)
+            th= ServiceMember.human_attribute_name(:lastname)
+            th= ServiceMember.human_attribute_name(:firstname)
+            th= ServiceMember.human_attribute_name(:ahv_number)
+        tbody
+          - service_members.each do |service_member|
+            tr
+              td= service_member.rank
+              td= service_member.lastname
+              td= service_member.firstname
+              td= service_member.ahv_number
