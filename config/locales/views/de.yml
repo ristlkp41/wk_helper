@@ -37,6 +37,9 @@ de:
         alert: "Die Dienstleistenden konnten nicht angelegt/aktualisiert werden. Fehlerhafte Daten in den Reihen: %{rows}."
 
   zuko:
+    attendees:
+      index:
+        title: Zurzeit %{count} Dienstleistende anwesend
     passages:
       new:
         last_passage:

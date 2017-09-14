@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   namespace :zuko do
     resources :passages, only: [:new, :create]
+
+    resources :attendees, only: [:index]
   end
 
 end

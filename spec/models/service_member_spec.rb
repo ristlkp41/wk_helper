@@ -30,6 +30,26 @@ RSpec.describe ServiceMember, type: :model do
     end
   end
 
+  context 'scopes' do
+    describe '.attending' do
+
+      it 'returns service members whose last passage was on the way in' do
+        member_in = Fabricate(:service_member)
+        Fabricate(:passage, service_member: member_in, way: Passage::WAY_IN, passed_at: 1.days.ago)
+        Fabricate(:passage, service_member: member_in, way: Passage::WAY_OUT, passed_at: 2.days.ago)
+
+        member_out = Fabricate(:service_member)
+        Fabricate(:passage, service_member: member_out, way: Passage::WAY_OUT, passed_at: 1.day.ago)
+        Fabricate(:passage, service_member: member_out, way: Passage::WAY_IN, passed_at: 2.day.ago)
+
+        results = ServiceMember.attending
+        expect(results).to include(member_in)
+        expect(results).to_not include(member_out)
+      end
+
+    end
+  end
+
   describe '#last_passage' do
     before(:each) do
       @service_member = Fabricate(:service_member)

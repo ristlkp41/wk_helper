@@ -7,6 +7,8 @@ class ServiceMember < ApplicationRecord
   validates :firstname, presence: true
   validates :ahv_number, presence: true, uniqueness: true
 
+  scope :attending, -> { joins(:passages).where('passages.passed_at = (SELECT MAX(passed_at) FROM passages WHERE service_member_id = service_members.id)').where('passages.way = ?', Passage::WAY_IN) }
+
   def last_passage
     passages.order(passed_at: :desc).limit(1).first
   end
