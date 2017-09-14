@@ -15,6 +15,10 @@ module WkHelper
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
 
+    config.autoload_paths += [Rails.root.join('lib')]
+    config.eager_load_paths += [Rails.root.join('lib')]
+
+
     config.i18n.available_locales = [:de, :fr, :it, :en]
 
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.yml')]

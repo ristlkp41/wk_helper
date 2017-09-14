@@ -35,6 +35,7 @@ gem 'twitter-bootstrap-rails'
 gem 'rails-i18n'
 gem 'simple_form'
 gem 'jquery-rails'
+gem 'roo'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
