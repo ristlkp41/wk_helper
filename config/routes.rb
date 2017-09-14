@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :service_members
+
+    resource :service_member_import, only: [:new, :create]
   end
 
   namespace :zuko do

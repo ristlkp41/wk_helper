@@ -1,0 +1,15 @@
+.row
+  .col-lg-3
+    .well.sidebar
+      ul.nav.nav-list
+        li= link_to t('.back', default: t('helpers.links.back')), admin_service_members_path
+
+  .col-lg-9
+
+    = form_tag admin_service_member_import_path, method: 'post', multipart: true do
+      .form-group.file.service_member_import_file
+        = label_tag :service_member_import_file, t('.xlsx_export'), class: 'control-label string'
+        = file_field_tag :service_member_import_file, class: 'form-control-file', name: 'service_member_import[file]', type: 'file'
+
+      .form-actions
+        = submit_tag t('.submit')

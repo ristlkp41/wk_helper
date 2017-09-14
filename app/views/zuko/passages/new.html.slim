@@ -24,6 +24,6 @@
 
     = form_tag zuko_passages_path, method: 'post' do
       .form-group.string.passage_ahv_number
-        = label_tag :passage_ahv_number, 'AHV-Number', class: 'control-label string'
+        = label_tag :passage_ahv_number, ServiceMember.human_attribute_name(:ahv_number), class: 'control-label string'
         = text_field_tag :passage_ahv_number, nil, class: 'form-control string', name: 'passage[ahv_number]', type: 'text', autofocus: true
 

@@ -3,6 +3,7 @@
     .well.sidebar
       ul.nav.nav-list
         li= link_to t('.new', default: t('helpers.links.new')), new_admin_service_member_path
+        li= link_to t('.import'), new_admin_service_member_import_path
 
   .col-lg-9
     h1= t '.title', default: ServiceMember.model_name.human(count: 2)

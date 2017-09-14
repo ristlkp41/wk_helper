@@ -22,6 +22,19 @@ de:
       destroy: Löschen
       confirm: Diese Aktion kann nicht rückgängig gemacht werden. Sind Sie sicher?
 
+  admin:
+    service_members:
+      index:
+        import: Mil-Office Import
+    service_member_imports:
+      new:
+        xlsx_export: Mil-Office Excel Export
+        submit: Importieren
+      create:
+        invalid_file: Ungültige Datei. Es muss ein Mil-Office Excel Export hochgeladen werden (Dateiendung .xlsx).
+        notice: Die Dienstleistenden wurden erfolgreich angelegt/aktualisiert.
+        alert: "Die Dienstleistenden konnten nicht angelegt/aktualisiert werden. Fehlerhafte Daten in den Reihen: %{rows}."
+
   zuko:
     passages:
       new:
