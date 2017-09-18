@@ -1,0 +1,24 @@
+.row
+  .col-lg-3
+    .well.sidebar
+      ul.nav.nav-list
+        li= link_to t('.new', default: t('helpers.links.new')), new_admin_user_path
+
+  .col-lg-9
+    h1= t '.title', default: User.model_name.human(count: 2)
+
+    table.table.table-striped
+      thead
+        tr
+          th= User.human_attribute_name(:id)
+          th= User.human_attribute_name(:username)
+          th
+      tbody
+        - @users.each do |user|
+          tr
+            td= link_to user.id, admin_user_path(user)
+            td= user.username
+            td.pull-right
+              = link_to t('.show', default: t("helpers.links.show")), admin_user_path(user), class: 'btn btn-default btn-xs'
+              = link_to t('.edit', default: t("helpers.links.edit")), edit_admin_user_path(user), class: 'btn btn-default btn-xs'
+              = link_to t('.destroy', default: t("helpers.links.destroy")), admin_user_path(user), method: :delete, data: { confirm: t('.confirm', default: t("helpers.links.confirm")) }, class: 'btn btn-xs btn-danger'

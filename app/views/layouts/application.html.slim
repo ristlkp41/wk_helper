@@ -30,6 +30,7 @@ html lang="en"
             ul.nav.navbar-nav
               - if controller_path.start_with?('admin/')
                 li= link_to ServiceMember.model_name.human(count: 2), admin_service_members_path
+                li= link_to User.model_name.human(count: 2), admin_users_path
 
     .container
       = bootstrap_flash

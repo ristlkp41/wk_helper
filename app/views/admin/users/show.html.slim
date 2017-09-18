@@ -1,0 +1,31 @@
+.row
+  .col-lg-3
+    .well.sidebar-nav
+      ul.nav.nav-list
+        li= link_to t('.back', default: t('helpers.links.back')), admin_users_path
+        li= link_to t('.edit', default: t('helpers.links.edit')), edit_admin_user_path(@user)
+        li= link_to t('.destroy', default: t('helpers.links.destroy')), admin_user_path(@user), method: "delete", data: { confirm: t('.confirm', default: t("helpers.links.confirm")) }
+
+  .col-lg-9
+    h1=t '.title', :default => User.model_name.human
+
+    p
+      strong= User.human_attribute_name(:username) + ':'
+      br
+      = @user.username
+    p
+      strong= User.human_attribute_name(:current_sign_in_at) + ':'
+      br
+      - unless @user.current_sign_in_at.present?
+        = "-" 
+      - else
+        = l(@user.current_sign_in_at)
+        = "(#{@user.current_sign_in_ip})"
+    p
+      strong= User.human_attribute_name(:last_sign_in_at) + ':'
+      br
+      - unless @user.last_sign_in_at.present?
+        = "-"
+      - else
+        = l(@user.last_sign_in_at)
+        = "(#{@user.last_sign_in_at})"

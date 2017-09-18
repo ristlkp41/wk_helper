@@ -1,0 +1,14 @@
+.row
+  .col-lg-3
+    .well.sidebar-nav
+      ul.nav.nav-list
+        li= link_to t('.back', default: t('helpers.links.back')), admin_user_path(@user)
+
+  .col-lg-9
+    h1= t '.title', default: [:'helpers.titles.edit', 'Edit %{model}'], model: User.model_name.human
+
+    = simple_form_for @user, url: admin_user_path(@user) do |form|
+      = render partial: "form", locals: { form: form }
+
+      .form-actions
+        = form.submit t('.update', default: t('helpers.links.update'))

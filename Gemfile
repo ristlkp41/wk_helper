@@ -36,6 +36,8 @@ gem 'rails-i18n'
 gem 'simple_form'
 gem 'jquery-rails'
 gem 'roo'
+gem 'devise'
+gem 'devise-i18n'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

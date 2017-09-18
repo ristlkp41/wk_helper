@@ -4,12 +4,19 @@ de:
       service_member:
         one: Dienstleistender
         other: Dienstleistende
+      user:
+        one: Benutzer
+        other: Benutzer
     attributes:
       service_member:
         rank: Grad
         lastname: Nachname
         firstname: Vorname
         ahv_number: AHV-Nummer
+      user:
+        username: Benutzername
+        password: Passwort
+        password_confirmation: Passwortbestätigung
     errors:
       messages:
         record_invalid: 'Gültigkeitsprüfung ist fehlgeschlagen: %{errors}'

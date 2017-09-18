@@ -3,8 +3,8 @@
     .well.sidebar-nav
       ul.nav.nav-list
         li= link_to t('.back', default: t('helpers.links.back')), admin_service_members_path
-        li= link_to t('.edit', default: t('helpers.links.edit')), edit_admin_service_member_path(@service_member)
-        li= link_to t('.destroy', default: t('helpers.links.destroy')), admin_service_member_path(@service_member), method: "delete", data: { confirm: t('.confirm', default: t("helpers.links.confirm")) }
+        li= link_to t('.edit', default: t('helpers.links.edit')), edit_admin_service_member_path(@service_member) if @service_member.editable?
+        li= link_to t('.destroy', default: t('helpers.links.destroy')), admin_service_member_path(@service_member), method: "delete", data: { confirm: t('.confirm', default: t("helpers.links.confirm")) } if @service_member.deletable?
 
   .col-lg-9
     h1=t '.title', :default => ServiceMember.model_name.human
