@@ -44,8 +44,8 @@ de:
     passages:
       new:
         last_passage:
-          in: Letzter Eingang
-          out: Letzter Ausgang
+          in: Eingang
+          out: Ausgang
         new_passage: Neuer Ein-/Ausgang
       create:
         notice: Ein-/Austritt erfolgreich registriert

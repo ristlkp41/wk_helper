@@ -1,9 +1,12 @@
 
 - if @service_member.present?
   .row
-    .col-md-12
-      h1= t(".last_passage.#{@passage.way}")
+    .col-md-3
+      p.last-passage class="passage-#{@passage.way}"
+        i.glyphicon class="glyphicon-log-#{@passage.way}"
+        = t("zuko.passages.new.last_passage.#{@passage.way}")
 
+    .col-md-9
       p
         strong= ServiceMember.human_attribute_name(:rank)
         br
