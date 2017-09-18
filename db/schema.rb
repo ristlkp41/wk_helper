@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170918095844) do
+ActiveRecord::Schema.define(version: 20170918133427) do
 
   create_table "passages", force: :cascade do |t|
     t.integer "service_member_id"
@@ -41,6 +41,8 @@ ActiveRecord::Schema.define(version: 20170918095844) do
     t.string "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "is_zuko"
+    t.boolean "is_admin"
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 

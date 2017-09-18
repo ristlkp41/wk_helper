@@ -1,14 +1,17 @@
 .row
-  .col-md-6
-    h2= t('.zuko')
 
-    ul
-      li= link_to t('.zuko_passages'), new_zuko_passage_path
-      li= link_to t('.zuko_attendees'), zuko_attendees_path
+  - if current_user.is_zuko?
+    .col-md-6
+      h2= t('.zuko')
 
-  .col-md-6
-    h2= t('.admin')
+      ul
+        li= link_to t('.zuko_passages'), new_zuko_passage_path
+        li= link_to t('.zuko_attendees'), zuko_attendees_path
 
-    ul
-      li= link_to t('.admin_service_members'), admin_service_members_path
+  - if current_user.is_admin?
+    .col-md-6
+      h2= t('.admin')
+
+      ul
+        li= link_to t('.admin_service_members'), admin_service_members_path
         

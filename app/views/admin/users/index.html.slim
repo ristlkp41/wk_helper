@@ -12,12 +12,16 @@
         tr
           th= User.human_attribute_name(:id)
           th= User.human_attribute_name(:username)
+          th= User.human_attribute_name(:is_zuko)
+          th= User.human_attribute_name(:is_admin)
           th
       tbody
         - @users.each do |user|
           tr
             td= link_to user.id, admin_user_path(user)
             td= user.username
+            td= t("boolean.#{user.is_zuko?}")
+            td= t("boolean.#{user.is_admin?}")
             td.pull-right
               = link_to t('.show', default: t("helpers.links.show")), admin_user_path(user), class: 'btn btn-default btn-xs'
               = link_to t('.edit', default: t("helpers.links.edit")), edit_admin_user_path(user), class: 'btn btn-default btn-xs'

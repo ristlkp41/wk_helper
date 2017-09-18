@@ -1,4 +1,8 @@
 de:
+  boolean:
+    'true': Ja
+    'false': Nein
+
   helpers:
     titles:
       new: "%{model} erfassen"
@@ -22,6 +26,11 @@ de:
       show: Anzeigen
       destroy: Löschen
       confirm: Diese Aktion kann nicht rückgängig gemacht werden. Sind Sie sicher?
+    permissions:
+      forbidden: Kein Zugriff auf diese Funktionalität.
+
+  navigation:
+    sign_out: Abmelden
 
   home:
     index:

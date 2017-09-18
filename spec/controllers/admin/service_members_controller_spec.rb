@@ -1,6 +1,12 @@
 require 'rails_helper'
 
 describe Admin::ServiceMembersController, type: :controller do
+  include Devise::TestHelpers
+
+  before(:each) do
+    user = Fabricate(:user, is_admin: true)
+    sign_in user
+  end
 
   describe '#update' do
     it 'does not change uneditable service members' do

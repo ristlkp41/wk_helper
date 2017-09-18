@@ -14,6 +14,14 @@
       br
       = @user.username
     p
+      strong= User.human_attribute_name(:is_zuko) + ':'
+      br
+      = t("boolean.#{@user.is_zuko?}")
+    p
+      strong= User.human_attribute_name(:is_admin) + ':'
+      br
+      = t("boolean.#{@user.is_admin?}")
+    p
       strong= User.human_attribute_name(:current_sign_in_at) + ':'
       br
       - unless @user.current_sign_in_at.present?

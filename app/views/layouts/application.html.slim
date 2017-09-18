@@ -25,12 +25,13 @@ html lang="en"
             span.icon-bar
             span.icon-bar
             span.icon-bar
-          a.navbar-brand href="#"WkHelper
+          = link_to 'WkHelper', root_path, class: 'navbar-brand'
           .navbar-collapse.collapse.navbar-responsive-collapse
             ul.nav.navbar-nav
               - if controller_path.start_with?('admin/')
                 li= link_to ServiceMember.model_name.human(count: 2), admin_service_members_path
                 li= link_to User.model_name.human(count: 2), admin_users_path
+              li= link_to t('navigation.sign_out'), destroy_user_session_path, method: :delete
 
     .container
       = bootstrap_flash

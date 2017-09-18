@@ -15,6 +15,8 @@ de:
         ahv_number: AHV-Nummer
       user:
         username: Benutzername
+        is_zuko: Zugriff auf Zutrittskontrolle
+        is_admin: Zugriff auf Administration
         password: Passwort
         password_confirmation: Passwortbestätigung
     errors:

@@ -1,5 +1,5 @@
 module Zuko
-  class AttendeesController < ApplicationController
+  class AttendeesController < SecuredController
 
     def index
       @service_members = ServiceMember.attending.order('lastname ASC, firstname ASC')
