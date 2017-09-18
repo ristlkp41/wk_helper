@@ -23,6 +23,14 @@ de:
       destroy: Löschen
       confirm: Diese Aktion kann nicht rückgängig gemacht werden. Sind Sie sicher?
 
+  home:
+    index:
+      zuko: Zutrittskontrolle
+      zuko_passages: Ein-/Austritte
+      zuko_attendees: Anwesenheitsübersicht
+      admin: Administratives
+      admin_service_members: Dienstleistende verwalten
+
   admin:
     service_members:
       index:
