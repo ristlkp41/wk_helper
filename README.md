@@ -1,24 +1,10 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Installation auf Raspberry Pi 3 mit Ubuntu Mate mit folgendem Kommando:
 
-Things you may want to cover:
+    curl -fsSL https://raw.githubusercontent.com/ristlkp41/wk_helper/master/setup.sh | bash
 
-* Ruby version
+Server starten mit folgendem Kommando:
 
-* System dependencies
+    ~/wk_helper/run.sh
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
