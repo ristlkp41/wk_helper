@@ -3,7 +3,8 @@
     .col-md-12
       h1
         = l(Time.now, format: "%d.%m. %H:%M:%S")
-        span.pull-right= t('.title', count: service_members.count)
+        br
+        = t('.title', count: service_members.count)
       = link_to t('.refresh'), zuko_attendees_path, remote: true, class: 'refresh'
 
       table.table.table-striped
